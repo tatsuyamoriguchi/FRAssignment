@@ -7,19 +7,19 @@
 \red93\green216\blue255;\red108\green121\blue134;\red255\green255\blue255;\red158\green241\blue221;\red209\green169\blue255;
 \red255\green255\blue255;\red163\green104\blue231;\red162\green104\blue231;\red252\green95\blue162;\red255\green255\blue255;
 \red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;\red255\green255\blue255;\red255\green255\blue255;
-\red0\green0\blue0;\red146\green161\blue177;}
+\red146\green161\blue177;\red255\green255\blue255;\red0\green0\blue0;}
 {\*\expandedcolortbl;;\cssrgb\c6667\c33333\c80000;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c0\c0;
 \csgenericrgb\c100000\c100000\c100000\c85000;\csgenericrgb\c12054\c12284\c14131;\csgenericrgb\c98839\c37355\c63833;\csgenericrgb\c25490\c63137\c75294;\csgenericrgb\c81681\c65692\c99927;
 \csgenericrgb\c98912\c41558\c36568;\csgenericrgb\c40538\c71705\c64209;\csgenericrgb\c81569\c65882\c100000;\csgenericrgb\c63232\c40219\c90115;\csgenericrgb\c63137\c40392\c90196;
 \csgenericrgb\c36295\c84643\c99897;\csgenericrgb\c42394\c47462\c52518;\cssrgb\c100000\c100000\c99971\c0;\csgenericrgb\c61961\c94510\c86667;\cssrgb\c85786\c73513\c100000;
 \cssrgb\c100000\c100000\c99970\c85000;\cssrgb\c70276\c51096\c92538;\cssrgb\c70188\c51250\c92603;\cssrgb\c100000\c47838\c69603;\cssrgb\c100000\c100000\c99985\c85000;
 \cssrgb\c100000\c100000\c100000\c0;\cssrgb\c0\c1\c1;\cssrgb\c100000\c100000\c99985\c0;\csgenericrgb\c100000\c100000\c100000;\cssrgb\c100000\c100000\c99985;
-\cssrgb\c0\c1\c1;\csgenericrgb\c57255\c63137\c69412;}
+\csgenericrgb\c57255\c63137\c69412;\cssrgb\c100000\c100000\c99955;\cssrgb\c0\c1\c1;}
 {\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid2\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid3\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li2160\lin2160 }{\listname ;}\listid1}
 {\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{check\}}{\leveltext\leveltemplateid101\'01\uc0\u10003 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
 {\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{check\}}{\leveltext\leveltemplateid201\'01\uc0\u10003 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}}
 {\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}}
-\margl1440\margr1440\vieww14960\viewh10520\viewkind0
+\margl1440\margr1440\vieww14960\viewh13840\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\fs24 \cf0 FetchRewards\
@@ -252,7 +252,7 @@ https://www.themealdb.com/api/json/v1/1/categories.php \cf4 \cb1 " to point an e
 \pard\tx940\tx1440\pardeftab593\li1440\fi-1440\pardirnatural\partightenfactor0
 \ls1\ilvl1\cf3 \cb17 {\listtext	
 \f4 \cf5 \cb6 \uc0\u8259 
-\f2 	}    
+\f2 	}\cf3 \cb17     
 \f3\b \cf7 var
 \f2\b0 \cf5  \cf8 localCategories\cf5  = [\cf18 Category\cf5 ]()\
 \pard\tx220\tx720\tx1120\pardeftab593\li720\fi-720\pardirnatural\partightenfactor0
@@ -279,15 +279,15 @@ https://www.themealdb.com/api/json/v1/1/categories.php \cf4 \cb1 " to point an e
 {\listtext	29.	}Add Meals.swift model file, and Copy formatted Meals JSON data and paste to Meals.swift file for reference.\
 {\listtext	30.	}Create Codable classes, \'93Meals\'94 and \'93Meal\'94. Add () to 
 \f3\b \cf7 \cb6 let
-\f2\b0 \cf5  \cf8 \cb6 meals\cf5 \cb6  = [\cf18 \cb6 Meal\cf5 \cb6 ]() \cf26 \cb27 to avoid Xcode warnings, \'93doesn\'92t not conform to protocol Decodable/Encodable.\
+\f2\b0 \cf5  \cf8 meals\cf5  = [\cf18 Meal\cf5 ]() \cf26 \cb27 to avoid Xcode warnings, \'93doesn\'92t not conform to protocol Decodable/Encodable.\
 \ls1\ilvl0
 \f0 \cf0 \cb1 {\listtext	31.	}Create a CocoaTouch Class file, MealsTableViewCell.swift\
 {\listtext	32.	}Add \'91
 \f2 \cf5 \cb6     
 \f3\b \cf7 let
-\f2\b0 \cf5  \cf8 \cb6 baseUrl\cf5 \cb6  = \cf10 \cb6 "https://www.themealdb.com/api/json/v1/1/filter.php?c="\cf5 \cb6 \
+\f2\b0 \cf5  \cf8 baseUrl\cf5  = \cf10 "https://www.themealdb.com/api/json/v1/1/filter.php?c="\cf5 \
 \pard\tx940\tx1440\pardeftab593\li1440\fi-1440\pardirnatural\partightenfactor0
-\ls1\ilvl1\cf5 \cb6 {\listtext	
+\ls1\ilvl1\cf5 {\listtext	
 \f4 \uc0\u8259 
 \f2 	}    
 \f3\b \cf7 let
@@ -306,9 +306,10 @@ https://www.themealdb.com/api/json/v1/1/categories.php \cf4 \cb1 " to point an e
 \f2\b0 \cf5  
 \f3\b \cf7 var
 \f2\b0 \cf5  \cf8 url\cf5  = \cf9 URL\cf5 (string: \cf11 stringUrl\cf5 )\
+\pard\tx940\tx1440\pardeftab593\li1440\fi-1440\pardirnatural\partightenfactor0
 \ls1\ilvl1\cf10 {\listtext	
 \f4 \uc0\u8259 
-\f2 	}\cf30 \cb25 to MealsTableviewController class\
+\f2 	}\cf26 \cb25 to MealsTableviewController class\
 \pard\tx220\tx720\tx1440\pardeftab593\li720\fi-720\pardirnatural\partightenfactor0
 \ls1\ilvl0
 \f0 \cf0 \cb1 {\listtext	33.	}Add \'93toMeals\'94 to segue identifier on Storyboard\
@@ -319,12 +320,12 @@ https://www.themealdb.com/api/json/v1/1/categories.php \cf4 \cb1 " to point an e
 \f3\b \cf7 func
 \f2\b0 \cf5  \cf8 tableView\cf5 (
 \f3\b \cf7 _
-\f2\b0 \cf5  tableView: \cf12 \cb6 UITableView\cf5 \cb6 , didSelectRowAt indexPath: \cf9 IndexPath\cf5 ) \{\
+\f2\b0 \cf5  tableView: \cf12 UITableView\cf5 , didSelectRowAt indexPath: \cf9 IndexPath\cf5 ) \{\
 \pard\tx593\pardeftab593\pardirnatural\partightenfactor0
 \ls1\ilvl0\cf5 {\listtext	35.	}        \cf14 performSegue\cf5 (withIdentifier: \cf10 "toMeals"\cf5 , sender: 
 \f3\b \cf7 nil
 \f2\b0 \cf5 )\
-{\listtext	36.	}        \cf11 idCategoryToSegue\cf5  = \cf11 localCategories\cf5 [indexPath.\cf13 \cb6 row\cf5 \cb6 ].\cf11 idCategory\cf5 \
+{\listtext	36.	}        \cf11 idCategoryToSegue\cf5  = \cf11 localCategories\cf5 [indexPath.\cf13 row\cf5 ].\cf11 idCategory\cf5 \
 {\listtext	37.	}    \}\cf26 \cb27 to CategoryTableViewController class
 \f0 \cf0 \cb1 \
 \pard\tx220\tx720\tx1440\pardeftab593\li720\fi-720\pardirnatural\partightenfactor0
@@ -342,7 +343,7 @@ https://www.themealdb.com/api/json/v1/1/categories.php \cf4 \cb1 " to point an e
 \pard\tx940\tx1440\pardeftab593\li1440\fi-1440\pardirnatural\partightenfactor0
 \ls1\ilvl1\cf0 {\listtext	\uc0\u8259 	}
 \f2 \cf5 \cb6     \cf16 // MARK:
-\f3\b \cf31  - Navigation
+\f3\b \cf30  - Navigation
 \f2\b0 \cf5 \
 \pard\tx593\pardeftab593\pardirnatural\partightenfactor0
 \ls1\ilvl1\cf5 {\listtext	
@@ -384,15 +385,22 @@ https://www.themealdb.com/api/json/v1/1/categories.php \cf4 \cb1 " to point an e
 \f2 	}    \}\
 \pard\tx220\tx720\tx1440\pardeftab593\li720\fi-720\pardirnatural\partightenfactor0
 \ls1\ilvl0
-\f0 \cf0 \cb1 {\listtext	40.	}\
+\f0 \cf0 \cb1 {\listtext	40.	}Added UI properties to MealsTableViewCell class.\
+{\listtext	41.	}Add UI properties to MealsTableViewController.\
+{\listtext	42.	}Review how to pass a value via segue.\
 \pard\tx560\pardeftab593\pardirnatural\partightenfactor0
 \cf0 \
 \pard\tx220\tx720\tx1120\pardeftab593\li720\fi-720\pardirnatural\partightenfactor0
 \ls2\ilvl0\cf0 \
 \pard\tx720\tx1120\pardeftab593\pardirnatural\partightenfactor0
-\cf0 Add UI properties to MealsTableViewController.\
+\cf0 \
 Add code to 
-\f2 \cf5 \cb6 cellForRowAt, 
+\f2 \cf5 \cb6 cellForRowAt, \
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
+
+\f3\b \cf7 \cb6 func
+\f2\b0 \cf5  \cf8 downloadJson\cf5 () \cf31 \cb32 to be re-factored\
+
 \f0 \cf0 \cb1 \
 \pard\tx220\tx720\tx1120\pardeftab593\li720\fi-720\pardirnatural\partightenfactor0
 \ls3\ilvl0\cf0 Re-practice this assignment till you can memorize and be able to explain all.\

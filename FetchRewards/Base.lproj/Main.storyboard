@@ -15,7 +15,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="150" id="Q5u-h6-zxe" customClass="CategoryTableViewCell" customModule="FetchRewards" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoriesCell" rowHeight="150" id="Q5u-h6-zxe" customClass="CategoryTableViewCell" customModule="FetchRewards" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q5u-h6-zxe" id="lnB-1n-Cla">
@@ -102,13 +102,56 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MealsCell" rowHeight="150" id="Tum-fO-Rwp">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MealsCell" rowHeight="150" id="Tum-fO-Rwp" customClass="MealsTableViewCell" customModule="FetchRewards" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tum-fO-Rwp" id="JtO-zh-Pm8">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="scY-4E-9jl">
+                                            <rect key="frame" x="5" y="5" width="136" height="140"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="136" id="ZdY-wO-tEq"/>
+                                                <constraint firstAttribute="height" constant="136" id="aGp-Y4-3Bn"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="idMealLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPh-8L-Y6p">
+                                            <rect key="frame" x="156" y="16" width="233" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="2qN-8P-oyK"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="strMealLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mkb-9P-dkb">
+                                            <rect key="frame" x="156" y="41" width="233" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="TAw-hu-jTV"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="BPh-8L-Y6p" secondAttribute="trailing" constant="5" id="2bd-1m-the"/>
+                                        <constraint firstItem="BPh-8L-Y6p" firstAttribute="leading" secondItem="scY-4E-9jl" secondAttribute="trailing" constant="15" id="76m-fK-QJd"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="mkb-9P-dkb" secondAttribute="trailing" constant="5" id="7PX-D6-4wq"/>
+                                        <constraint firstItem="mkb-9P-dkb" firstAttribute="leading" secondItem="scY-4E-9jl" secondAttribute="trailing" constant="15" id="NHz-9C-cRY"/>
+                                        <constraint firstItem="mkb-9P-dkb" firstAttribute="top" secondItem="BPh-8L-Y6p" secondAttribute="bottom" constant="5" id="PmI-UB-gmb"/>
+                                        <constraint firstItem="BPh-8L-Y6p" firstAttribute="top" secondItem="JtO-zh-Pm8" secondAttribute="topMargin" constant="5" id="jJm-uR-R95"/>
+                                        <constraint firstItem="scY-4E-9jl" firstAttribute="top" secondItem="JtO-zh-Pm8" secondAttribute="top" constant="5" id="mDA-9M-Coa"/>
+                                        <constraint firstAttribute="bottom" secondItem="scY-4E-9jl" secondAttribute="bottom" constant="5" id="nE9-bJ-Dha"/>
+                                        <constraint firstItem="scY-4E-9jl" firstAttribute="leading" secondItem="JtO-zh-Pm8" secondAttribute="leading" constant="5" id="sfA-wb-RLn"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="idMealLabel" destination="BPh-8L-Y6p" id="f8q-yL-vHl"/>
+                                    <outlet property="strMealLabel" destination="mkb-9P-dkb" id="RUz-v2-8Df"/>
+                                    <outlet property="strMealThumbImageView" destination="scY-4E-9jl" id="doU-IV-RBa"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -120,7 +163,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Hu-EE-84w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2727.536231884058" y="-1730.3571428571429"/>
+            <point key="canvasLocation" x="-2668" y="-1758"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UxL-EQ-qqr">
