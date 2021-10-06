@@ -94,15 +94,14 @@ class CategoryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let strCategoryToSegue = localCategories[indexPath.row].strCategory
+        let strCategoryForURL = localCategories[indexPath.row].strCategory
         
-        print("#1 strCategoryToSegue: \(String(describing: strCategoryToSegue))")
+        print("#1 strCategoryForURL: \(String(describing: strCategoryForURL))")
         
-        urlToPass = URL(string: "https://www.themealdb.com/api/json/v1/1/filter.php?c=" + strCategoryToSegue)
+        urlToPass = URL(string: "https://www.themealdb.com/api/json/v1/1/filter.php?c=" + strCategoryForURL)
 
         
-        performSegue(withIdentifier: "toMeals", sender: self)
-        //self.performSegue(withIdentifier: "taskList", sender: self)
+        performSegue(withIdentifier: "toMeals", sender: nil)
     }
 
 
@@ -115,7 +114,7 @@ class CategoryTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if  segue.identifier == segueIdentifier,
                 let destination = segue.destination as? MealsTableViewController {
-                guard destination.url == urlToPass else { return }
+                destination.url = urlToPass
                 
                 print("#2 strCategoryToSegue: \(String(describing: urlToPass))")
                 
