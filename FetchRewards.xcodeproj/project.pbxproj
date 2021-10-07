@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C2E2246270E608F009F4BF7 /* MealDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2E2245270E608F009F4BF7 /* MealDetails.swift */; };
+		8C2E2247270E608F009F4BF7 /* MealDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2E2245270E608F009F4BF7 /* MealDetails.swift */; };
+		8C2E2248270E608F009F4BF7 /* MealDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2E2245270E608F009F4BF7 /* MealDetails.swift */; };
+		8C6D44AD270F89C1001E537A /* MealDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6D44AC270F89C1001E537A /* MealDetailsViewController.swift */; };
+		8C6D44AE270F89C1001E537A /* MealDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6D44AC270F89C1001E537A /* MealDetailsViewController.swift */; };
+		8C6D44AF270F89C1001E537A /* MealDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6D44AC270F89C1001E537A /* MealDetailsViewController.swift */; };
 		8C6F7CB12707627300C806E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6F7CB02707627300C806E8 /* AppDelegate.swift */; };
 		8C6F7CB32707627300C806E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6F7CB22707627300C806E8 /* SceneDelegate.swift */; };
 		8C6F7CB82707627300C806E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C6F7CB62707627300C806E8 /* Main.storyboard */; };
@@ -54,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C2E2245270E608F009F4BF7 /* MealDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetails.swift; sourceTree = "<group>"; };
+		8C6D44AC270F89C1001E537A /* MealDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsViewController.swift; sourceTree = "<group>"; };
 		8C6F7CAD2707627300C806E8 /* FetchRewards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FetchRewards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C6F7CB02707627300C806E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C6F7CB22707627300C806E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,14 +139,16 @@
 				8C6F7CB22707627300C806E8 /* SceneDelegate.swift */,
 				8C6F7CE42707739B00C806E8 /* CategoryTableViewController.swift */,
 				8C701290270A69B2008A1C03 /* CategoryTableViewCell.swift */,
-				8C6F7CB62707627300C806E8 /* Main.storyboard */,
 				8C74CF6F270D401A005F3533 /* MealsTableViewController.swift */,
 				8C74CF7F270D5292005F3533 /* MealsTableViewCell.swift */,
+				8C6D44AC270F89C1001E537A /* MealDetailsViewController.swift */,
+				8C6F7CB62707627300C806E8 /* Main.storyboard */,
 				8C6F7CB92707627B00C806E8 /* Assets.xcassets */,
 				8C6F7CBB2707627B00C806E8 /* LaunchScreen.storyboard */,
 				8C6F7CBE2707627B00C806E8 /* Info.plist */,
 				8C701294270ABE2A008A1C03 /* Category.swift */,
 				8C74CF77270D44DC005F3533 /* Meal.swift */,
+				8C2E2245270E608F009F4BF7 /* MealDetails.swift */,
 			);
 			path = FetchRewards;
 			sourceTree = "<group>";
@@ -301,6 +311,8 @@
 				8C74CF70270D401A005F3533 /* MealsTableViewController.swift in Sources */,
 				8C6F7CB12707627300C806E8 /* AppDelegate.swift in Sources */,
 				8C6F7CB32707627300C806E8 /* SceneDelegate.swift in Sources */,
+				8C2E2246270E608F009F4BF7 /* MealDetails.swift in Sources */,
+				8C6D44AD270F89C1001E537A /* MealDetailsViewController.swift in Sources */,
 				8C6F7CE52707739B00C806E8 /* CategoryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,6 +322,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C74CF71270D401A005F3533 /* MealsTableViewController.swift in Sources */,
+				8C2E2247270E608F009F4BF7 /* MealDetails.swift in Sources */,
+				8C6D44AE270F89C1001E537A /* MealDetailsViewController.swift in Sources */,
 				8C6F7CC82707627B00C806E8 /* FetchRewardsTests.swift in Sources */,
 				8C6F7CE62707739B00C806E8 /* CategoryTableViewController.swift in Sources */,
 				8C701292270A69B2008A1C03 /* CategoryTableViewCell.swift in Sources */,
@@ -324,6 +338,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C74CF72270D401A005F3533 /* MealsTableViewController.swift in Sources */,
+				8C2E2248270E608F009F4BF7 /* MealDetails.swift in Sources */,
+				8C6D44AF270F89C1001E537A /* MealDetailsViewController.swift in Sources */,
 				8C6F7CD32707627B00C806E8 /* FetchRewardsUITests.swift in Sources */,
 				8C6F7CE72707739B00C806E8 /* CategoryTableViewController.swift in Sources */,
 				8C701293270A69B2008A1C03 /* CategoryTableViewCell.swift in Sources */,

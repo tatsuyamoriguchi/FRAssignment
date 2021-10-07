@@ -14,12 +14,6 @@ class MealsTableViewController: UITableViewController {
     var url: URL!
     let idMeal: String = ""
 
-//    let baseUrl = "https://www.themealdb.com/api/json/v1/1/filter.php?c="
-//    let stringUrl = baseUrl + strCategory // Use lazy to avoid an error "Cannot use instance member 'baseUrl' within property initializer; property initializers run before 'self' is available" BUT if placed within downloadJson(), no need to add 'lazy'
-//    let url = URL(string: stringUrl)
-    
-        
-//    let url = URL(string: "https://www.themealdb.com/api/json/v1/1/filter.php?c=" + strCategory)
     
     // Define a local array for TableView
     var localMeals = [Meal]()
@@ -32,13 +26,10 @@ class MealsTableViewController: UITableViewController {
                 print("Erro occred.")
                 return
             }
-            print("url: \(String(describing: self.url)))")
             
             do {
                 let decoder = JSONDecoder()
                 let downloadedMeals = try decoder.decode(Meals.self, from: data)
-//                print(downloadedMeals)
-//                print(downloadedMeals.meals[0].idMeal as Any)
                 
                 self.localMeals = downloadedMeals.meals
                 
@@ -100,18 +91,33 @@ class MealsTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let idMealForURL = localMeals[indexPath.row].idMeal {
+        urlToPassForMealDetails = URL(string: "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + idMealForURL)
+        performSegue(withIdentifier: "toMealDetails", sender: nil)
+        } else { print("idMail was nil?")}
+    }
+    
 
 
 
 
-    /*
+    
     // MARK: - Navigation
-
+     // To pass idCategory value to segue
+     var urlToPassForMealDetails: URL?
+     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toMealDetails", let destination = segue.destination as? MealDetailsViewController {
+            destination.url = urlToPassForMealDetails
+            
+        }
+
+        
+        
+        
     }
-    */
+    
 
 }

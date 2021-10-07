@@ -11,7 +11,6 @@ import UIKit
 class CategoryTableViewController: UITableViewController {
 
     
-    
     final let url = URL(string: "https://www.themealdb.com/api/json/v1/1/categories.php")
     
     // Define a local array for TableView
@@ -28,8 +27,6 @@ class CategoryTableViewController: UITableViewController {
             do {
                 let decoder = JSONDecoder()
                 let downloadedCategories = try decoder.decode(Categories.self, from: data)
-//                print(downloadedCategories)
-//                print(downloadedCategories.categories[0].strCategory)
                 
                 self.localCategories = downloadedCategories.categories
                 
@@ -46,7 +43,9 @@ class CategoryTableViewController: UITableViewController {
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        navigationItem.title = "Category List"
         downloadJson()
         
 
@@ -95,12 +94,7 @@ class CategoryTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let strCategoryForURL = localCategories[indexPath.row].strCategory
-        
-        print("#1 strCategoryForURL: \(String(describing: strCategoryForURL))")
-        
         urlToPass = URL(string: "https://www.themealdb.com/api/json/v1/1/filter.php?c=" + strCategoryForURL)
-
-        
         performSegue(withIdentifier: "toMeals", sender: nil)
     }
 
@@ -115,8 +109,6 @@ class CategoryTableViewController: UITableViewController {
             if  segue.identifier == segueIdentifier,
                 let destination = segue.destination as? MealsTableViewController {
                 destination.url = urlToPass
-                
-                print("#2 strCategoryToSegue: \(String(describing: urlToPass))")
                 
             }
     }
