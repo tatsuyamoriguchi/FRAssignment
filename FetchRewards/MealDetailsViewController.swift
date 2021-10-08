@@ -27,7 +27,7 @@ class MealDetailsViewController: UIViewController {
     @IBOutlet weak var strInstructionsTextView: UITextView!
     @IBOutlet weak var strIngredientsstrMeasureTextView: UITextView!
     
-    
+    var strMealThumb: String?
     var idMeal: String?
     var strMeal: String?
     var strDrinkAlternate: String?
@@ -64,6 +64,17 @@ class MealDetailsViewController: UIViewController {
                 
                 for item in downloadedMealDetails.meals {
                     
+            
+                    if let imageURL = URL(string: item.strMealThumb ?? "No Image Available") {
+                        DispatchQueue.global().async {
+                            guard let data = try? Data(contentsOf: imageURL) else { return }
+                            let image = UIImage(data: data)
+                                DispatchQueue.main.sync {
+                                    self.strMealThumbImageView.image = image
+                                }
+                        }
+                    }
+
                     self.idMeal = item.idMeal
                     self.strMeal = item.strMeal
                     self.strDrinkAlternate = item.strDrinkAlternate
