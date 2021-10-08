@@ -98,7 +98,7 @@ class MealsTableViewController: UITableViewController {
         } else { print("idMail was nil?")}
     }
     
-
+    var idMealForURL: String?
 
 
 
@@ -111,6 +111,8 @@ class MealsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toMealDetails", let destination = segue.destination as? MealDetailsViewController {
             destination.url = urlToPassForMealDetails
+            //destination.idMeal = idMealForURL
+            print("urlToPassForMealDetails: \(String(describing: urlToPassForMealDetails))")
             
         }
 

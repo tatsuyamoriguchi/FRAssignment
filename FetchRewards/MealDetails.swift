@@ -9,11 +9,11 @@
 import UIKit
 
 class MealDetailsList: Codable {
-    let meals = [MealDetails]()
+    var meals = [MealDetails]()
 
-//    init(meals: [MealDetails]) {
-//        self.meals = meals
-//    }
+    init(meals: [MealDetails]) {
+        self.meals = meals
+    }
 
 }
 

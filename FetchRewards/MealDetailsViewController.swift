@@ -29,11 +29,11 @@ class MealDetailsViewController: UIViewController {
     
     
     var url: URL!
+    //var idMeal: String!
     
     var localMealDetails = [MealDetails]()
     
     func downloadJson() {
-        
         guard let downloadUrl = url else { return }
         URLSession.shared.dataTask(with: downloadUrl) { (data, urlResponse, error) in
             guard let data = data, error == nil, urlResponse != nil else {
@@ -43,10 +43,18 @@ class MealDetailsViewController: UIViewController {
             
             do {
                 let decoder = JSONDecoder()
-                let downloadedMealDetails = try decoder.decode(MealDetails.self, from: data)
-                    
+                let downloadedMealDetails = try decoder.decode(MealDetailsList.self, from: data)
+
                 
-                    print(downloadedMealDetails)
+                for item in downloadedMealDetails.meals {
+                    print("\(String(describing: item.idMeal))")
+                    print("\(String(describing: item.strMeal))")
+                }
+//                self.localMealDetails = downloadedMealDetails.meals
+//
+//                print(self.localMealDetails)
+//
+
                 
                                 
             } catch {
@@ -63,6 +71,8 @@ class MealDetailsViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.title = "Meal Details"
 
+        downloadJson()
+        
         //idMealLabel.text = downloadedMealDetails.
     }
     
