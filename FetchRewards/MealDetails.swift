@@ -68,7 +68,7 @@ class MealDetails: Codable {
     let strMeasure19: String?
     let strMeasure20: String?
     let strSource: String?
-    let strImageSourece: String?
+    let strImageSource: String?
     let strCreativeCommonsConfirmed: String?
     let dateModified: Date?
     
@@ -124,7 +124,7 @@ class MealDetails: Codable {
      strMeasure19: String,
      strMeasure20: String,
      strSource: String,
-     strImageSourece: String,
+     strImageSource: String,
      strCreativeCommonsConfirmed: String,
      dateModified: Date)  {
         
@@ -178,7 +178,7 @@ class MealDetails: Codable {
          self.strMeasure19 = strMeasure19
          self.strMeasure20 = strMeasure20
          self.strSource = strSource
-         self.strImageSourece = strImageSourece
+         self.strImageSource = strImageSource
          self.strCreativeCommonsConfirmed = strCreativeCommonsConfirmed
          self.dateModified = dateModified
      }

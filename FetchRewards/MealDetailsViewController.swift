@@ -32,15 +32,15 @@ class MealDetailsViewController: UIViewController {
     var strMeal: String?
     var strDrinkAlternate: String?
     var strCategory: String?
-//    strArea
-//    strTags
-//    //dateModifiedLabel.text =
-//    strCreativeCommonsConfirmed
-//    strImageSourece
-//    strSource
-//    strYoutube
-//    strInstructions
-//    strIngredient1
+    var strArea: String?
+    var strTags: String?
+    //dateModifiedLabel.text =
+    var strCreativeCommonsConfirmed: String?
+    var strImageSource: String?
+    var strSource: String?
+    var strYoutube: String?
+    var strInstructions: String?
+    var strIngredient1: String?
     
     
     
@@ -68,18 +68,33 @@ class MealDetailsViewController: UIViewController {
                     self.strMeal = item.strMeal
                     self.strDrinkAlternate = item.strDrinkAlternate
                     self.strCategory = item.strCategory
-//                    print("\(String(describing: item.idMeal))")
-//                    print("\(String(describing: item.strMeal))")
-//                    print("\(String(describing: item.strArea))")
-//                    print("\(String(describing: item.strIngredient1))")
+                    self.strArea = item.strArea
+                    self.strTags = item.strTags
+                    //self.dateModifiedLabel.text =
+                    self.strCreativeCommonsConfirmed = item.strCreativeCommonsConfirmed
+                    self.strImageSource = item.strImageSource
+                    self.strSource = item.strSource
+                    self.strYoutube = item.strYoutube
+                    self.strInstructions = item.strInstructions
+                    //self.strIngredientsstrMeasure = item.strIngredient1
 
 
                     DispatchQueue.main.async {
-                    print("idMeal: \(String(describing: self.idMeal))")
-                    self.idMealLabel.text = self.idMeal
-                    self.strMealLabel.text = self.strMeal
-                    self.strDrinkAlternateLabel.text = self.strDrinkAlternate
-                    self.strCategoryLabel.text = self.strCategory
+                        //                    print("idMeal: \(String(describing: self.idMeal))")
+                        self.idMealLabel.text = self.idMeal
+                        self.strMealLabel.text = self.strMeal
+                        self.strDrinkAlternateLabel.text = self.strDrinkAlternate
+                        self.strCategoryLabel.text = self.strCategory
+                        self.strAreaLabel.text = self.strArea
+                        self.strTagsLabel.text = self.strTags
+                        //self.dateModifiedLabel.text =
+                        self.strCreativeCommonsConfirmedLabel.text = self.strCreativeCommonsConfirmed
+                        self.strImageSourceLabel.text = self.strImageSource
+                        self.strSourceLabel.text = self.strSource
+                        self.strYoutubeLabel.text = self.strYoutube
+                        self.strInstructionsTextView.text = self.strInstructions
+                        //self.strIngredientsstrMeasureTextView.text = self.strIngredient1
+                        
                     }
                 }
                 
@@ -103,22 +118,9 @@ class MealDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.title = "Meal Details"
-
-         
-//        DispatchQueue.main.sync {
-//            self.downloadJson()
-//        }
+        
         downloadJson()
-        
-               
-           
-//            print("idMeal: \(String(describing: idMeal))")
-//            idMealLabel.text = idMeal
-//            strMealLabel.text = strMeal
-//            strDrinkAlternateLabel.text = strDrinkAlternate
-//            strCategoryLabel.text = strCategory
-        
-        
+ 
 //        for item in localMealDetails {
 //            idMealLabel.text = item.idMeal
 //            strMealLabel.text = item.strMeal
