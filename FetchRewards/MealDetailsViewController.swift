@@ -24,11 +24,18 @@ class MealDetailsViewController: UIViewController {
 
 
     @IBOutlet weak var strImageSourceLabel: UILabel!
-    @IBOutlet weak var strSourceLabel: UILabel!
-
-    @IBOutlet weak var strYoutubeLabel: UILabel!
+    
+    
+    @IBOutlet weak var strSourceButton: UIButton!
+    @IBAction func strSourceButton(_ sender: Any) {
+          UIApplication.shared.open(URL(string: self.strSource!)! as URL, options: [:], completionHandler: nil)
+        
+    }
+    
+    
+    
     @IBOutlet weak var strYoutubeButton: UIButton!
-
+        
     @IBAction func strYoutubeButton(_ sender: Any) {
     UIApplication.shared.open(URL(string: self.strYoutube!)! as URL, options: [:], completionHandler: nil)
         
@@ -120,21 +127,22 @@ class MealDetailsViewController: UIViewController {
                         self.strImageSourceLabel.text = self.strImageSource
                         
                         
-                        self.strSourceLabel.text = self.strSource
-                        
-                        self.strYoutubeLabel.text = self.strYoutube
-                        
-                        
-                        
-                    
-                        print("strYoutube: \(String(describing: self.strYoutube))")
-                        
+                        if self.strSource == "" || self.strSource ==  nil {
+                            self.strSourceButton.alpha = 0
+                        } else {
+                            self.strSourceButton.setTitle("Open Source Link", for: .normal)
+                            self.strSourceButton.alpha = 1
+                        }
+
+
+
+//                        self.strYoutubeLabel.text = self.strYoutube
                         if self.strYoutube == "" || self.strYoutube == nil {
                             self.strYoutubeButton.alpha = 0
                             self.strYoutubeButton.setTitle("No link", for: .normal)
-                            print("say no link")
+                            
                         } else {
-                            print("say there is a link")
+                            
                             self.strYoutubeButton.setTitle("Open YouTube Video", for: .normal)
                             self.strYoutubeButton.alpha = 1
 
