@@ -72,15 +72,21 @@ class MealDetailsViewController: UIViewController {
 //                    print("\(String(describing: item.strMeal))")
 //                    print("\(String(describing: item.strArea))")
 //                    print("\(String(describing: item.strIngredient1))")
-                    
+
+
+                    DispatchQueue.main.async {
+                    print("idMeal: \(String(describing: self.idMeal))")
+                    self.idMealLabel.text = self.idMeal
+                    self.strMealLabel.text = self.strMeal
+                    self.strDrinkAlternateLabel.text = self.strDrinkAlternate
+                    self.strCategoryLabel.text = self.strCategory
+                    }
                 }
                 
                 
                 self.localMealDetails = downloadedMealDetails.meals
                 
-                DispatchQueue.main.sync {
-                    self.viewDidLoad()
-                }
+
 
                 
                                 
@@ -98,15 +104,21 @@ class MealDetailsViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.title = "Meal Details"
 
-         downloadJson()
+         
+//        DispatchQueue.main.sync {
+//            self.downloadJson()
+//        }
+        downloadJson()
         
+               
            
-            print("idMeal: \(String(describing: idMeal))")
-            idMealLabel.text = idMeal
-            strMealLabel.text = strMeal
-            strDrinkAlternateLabel.text = strDrinkAlternate
-            strCategoryLabel.text = strCategory
-  
+//            print("idMeal: \(String(describing: idMeal))")
+//            idMealLabel.text = idMeal
+//            strMealLabel.text = strMeal
+//            strDrinkAlternateLabel.text = strDrinkAlternate
+//            strCategoryLabel.text = strCategory
+        
+        
 //        for item in localMealDetails {
 //            idMealLabel.text = item.idMeal
 //            strMealLabel.text = item.strMeal
