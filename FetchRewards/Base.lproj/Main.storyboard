@@ -264,6 +264,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="strYoutubeLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vd0-xW-1Bg">
+                                <rect key="frame" x="10" y="355" width="394" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="Oym-zw-cip"/>
+                                    <constraint firstAttribute="height" constant="21" id="Peg-md-heY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="strImageSourceLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PvK-UJ-8YV">
                                 <rect key="frame" x="10" y="303" width="399" height="21"/>
                                 <constraints>
@@ -273,76 +283,76 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="strYoutubeLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgg-k8-Btu">
-                                <rect key="frame" x="10" y="355" width="399" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="0BR-tc-QHO"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="strInstructionsTextView" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dhf-hs-fcp" userLabel="strInstructionsTextView">
-                                <rect key="frame" x="10" y="386" width="394" height="200"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="strInstructionsTextView" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dhf-hs-fcp" userLabel="strInstructionsTextView">
+                                <rect key="frame" x="10" y="415" width="394" height="171"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="Y4E-mz-B0X"/>
-                                </constraints>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="strIngredients:strMeasureTextView" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uee-Pb-aa6" userLabel="strIngredients:strMeasureTextView">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="strIngredients:strMeasureTextView" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uee-Pb-aa6" userLabel="strIngredients:strMeasureTextView">
                                 <rect key="frame" x="10" y="596" width="394" height="290"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lN8-He-DPx">
+                                <rect key="frame" x="10" y="381" width="394" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="bov-YZ-Gsu"/>
+                                </constraints>
+                                <state key="normal" title="YouTube Link"/>
+                                <connections>
+                                    <action selector="strYoutubeButton:" destination="nhe-lC-vdu" eventType="touchUpInside" id="Jt8-g5-RHc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="XlP-km-4Fc" secondAttribute="trailing" constant="5" id="0TQ-Ir-fnH"/>
+                            <constraint firstItem="uee-Pb-aa6" firstAttribute="leading" secondItem="n8o-km-xAg" secondAttribute="leading" constant="10" id="1W3-iW-3cG"/>
                             <constraint firstItem="Tec-Op-kxl" firstAttribute="top" secondItem="x0h-k9-QqR" secondAttribute="bottom" constant="5" id="1rR-nq-TpW"/>
                             <constraint firstItem="Yef-n0-5gb" firstAttribute="top" secondItem="3Cg-0O-s7x" secondAttribute="bottom" constant="5" id="2K3-ok-x8A"/>
                             <constraint firstItem="Pdy-Fw-Es7" firstAttribute="top" secondItem="kBs-37-rSO" secondAttribute="bottom" constant="5" id="2aU-5c-cZa"/>
                             <constraint firstItem="Tec-Op-kxl" firstAttribute="leading" secondItem="ihy-bG-eIj" secondAttribute="trailing" constant="5" id="5az-WA-2wM"/>
-                            <constraint firstAttribute="bottom" secondItem="uee-Pb-aa6" secondAttribute="bottom" constant="10" id="5hn-72-4XG"/>
-                            <constraint firstItem="uee-Pb-aa6" firstAttribute="leading" secondItem="n8o-km-xAg" secondAttribute="leading" constant="10" id="5kq-SC-LOi"/>
-                            <constraint firstItem="Dgg-k8-Btu" firstAttribute="top" secondItem="YtM-kx-hz3" secondAttribute="bottom" constant="5" id="8Xk-wc-bUK"/>
-                            <constraint firstItem="dhf-hs-fcp" firstAttribute="top" secondItem="Dgg-k8-Btu" secondAttribute="bottom" constant="10" id="Blf-O7-6qS"/>
-                            <constraint firstItem="dhf-hs-fcp" firstAttribute="leading" secondItem="n8o-km-xAg" secondAttribute="leading" constant="10" id="CHk-eF-8RL"/>
+                            <constraint firstItem="lN8-He-DPx" firstAttribute="top" secondItem="vd0-xW-1Bg" secondAttribute="bottom" constant="5" id="7X6-Gc-FPX"/>
+                            <constraint firstItem="vd0-xW-1Bg" firstAttribute="top" secondItem="YtM-kx-hz3" secondAttribute="bottom" constant="5" id="CYB-fF-7gh"/>
                             <constraint firstItem="x0h-k9-QqR" firstAttribute="leading" secondItem="ihy-bG-eIj" secondAttribute="trailing" constant="5" id="Cai-m0-LDb"/>
                             <constraint firstItem="n8o-km-xAg" firstAttribute="trailing" secondItem="Tec-Op-kxl" secondAttribute="trailing" constant="5" id="DLJ-8b-bsr"/>
                             <constraint firstItem="3Cg-0O-s7x" firstAttribute="leading" secondItem="ihy-bG-eIj" secondAttribute="trailing" constant="5" id="Df2-ZI-Bty"/>
                             <constraint firstItem="n8o-km-xAg" firstAttribute="trailing" secondItem="x0h-k9-QqR" secondAttribute="trailing" constant="5" id="EyX-UC-tFP"/>
-                            <constraint firstItem="Dgg-k8-Btu" firstAttribute="leading" secondItem="n8o-km-xAg" secondAttribute="leading" constant="10" id="HXl-Up-T7R"/>
                             <constraint firstItem="n8o-km-xAg" firstAttribute="trailing" secondItem="URf-8y-icN" secondAttribute="trailing" constant="5" id="Ir9-7X-40n"/>
+                            <constraint firstItem="dhf-hs-fcp" firstAttribute="top" secondItem="lN8-He-DPx" secondAttribute="bottom" constant="10" id="KYP-qx-7aB"/>
+                            <constraint firstItem="n8o-km-xAg" firstAttribute="trailing" secondItem="lN8-He-DPx" secondAttribute="trailing" constant="10" id="Kic-fA-wuw"/>
                             <constraint firstItem="Yef-n0-5gb" firstAttribute="leading" secondItem="ihy-bG-eIj" secondAttribute="trailing" constant="5" id="Ldb-v9-Ic4"/>
+                            <constraint firstItem="vd0-xW-1Bg" firstAttribute="leading" secondItem="n8o-km-xAg" secondAttribute="leading" constant="10" id="OcV-bY-fUm"/>
                             <constraint firstItem="n8o-km-xAg" firstAttribute="trailing" secondItem="Yef-n0-5gb" secondAttribute="trailing" constant="5" id="Och-Ww-QNH"/>
                             <constraint firstItem="PvK-UJ-8YV" firstAttribute="top" secondItem="ihy-bG-eIj" secondAttribute="bottom" constant="10" id="OyI-4i-CoH"/>
                             <constraint firstItem="URf-8y-icN" firstAttribute="leading" secondItem="ihy-bG-eIj" secondAttribute="trailing" constant="5" id="P4f-eB-Zm6"/>
                             <constraint firstItem="x0h-k9-QqR" firstAttribute="top" secondItem="n8o-km-xAg" secondAttribute="top" constant="5" id="QFU-Uf-3Ll"/>
                             <constraint firstItem="YtM-kx-hz3" firstAttribute="top" secondItem="PvK-UJ-8YV" secondAttribute="bottom" constant="5" id="QUF-fK-bcq"/>
                             <constraint firstItem="3Cg-0O-s7x" firstAttribute="top" secondItem="Pdy-Fw-Es7" secondAttribute="bottom" constant="5" id="RoG-hh-Whv"/>
+                            <constraint firstItem="n8o-km-xAg" firstAttribute="trailing" secondItem="vd0-xW-1Bg" secondAttribute="trailing" constant="10" id="UZy-T5-VTx"/>
                             <constraint firstItem="XlP-km-4Fc" firstAttribute="leading" secondItem="ihy-bG-eIj" secondAttribute="trailing" constant="5" id="Wkq-D8-523"/>
-                            <constraint firstItem="n8o-km-xAg" firstAttribute="trailing" secondItem="uee-Pb-aa6" secondAttribute="trailing" constant="10" id="YwJ-Ff-Qog"/>
-                            <constraint firstItem="n8o-km-xAg" firstAttribute="trailing" secondItem="Dgg-k8-Btu" secondAttribute="trailing" constant="5" id="bqe-oN-v2e"/>
                             <constraint firstItem="n8o-km-xAg" firstAttribute="trailing" secondItem="kBs-37-rSO" secondAttribute="trailing" constant="5" id="e5p-UM-C2Q"/>
                             <constraint firstItem="ihy-bG-eIj" firstAttribute="leading" secondItem="n8o-km-xAg" secondAttribute="leading" constant="5" id="ecl-AS-NjP"/>
                             <constraint firstItem="YtM-kx-hz3" firstAttribute="leading" secondItem="n8o-km-xAg" secondAttribute="leading" constant="10" id="fwC-KB-ZL8"/>
                             <constraint firstItem="URf-8y-icN" firstAttribute="top" secondItem="Tec-Op-kxl" secondAttribute="bottom" constant="5" id="grY-uH-mUn"/>
                             <constraint firstItem="XlP-km-4Fc" firstAttribute="top" secondItem="Yef-n0-5gb" secondAttribute="bottom" constant="5" id="hgV-ex-8uc"/>
+                            <constraint firstItem="n8o-km-xAg" firstAttribute="trailing" secondItem="dhf-hs-fcp" secondAttribute="trailing" constant="10" id="iyX-2Q-UXG"/>
                             <constraint firstItem="PvK-UJ-8YV" firstAttribute="leading" secondItem="n8o-km-xAg" secondAttribute="leading" constant="10" id="kfb-Ie-zo6"/>
                             <constraint firstItem="kBs-37-rSO" firstAttribute="top" secondItem="URf-8y-icN" secondAttribute="bottom" constant="5" id="khR-Dy-jqM"/>
+                            <constraint firstItem="n8o-km-xAg" firstAttribute="trailing" secondItem="uee-Pb-aa6" secondAttribute="trailing" constant="10" id="liJ-Ob-OC8"/>
                             <constraint firstItem="n8o-km-xAg" firstAttribute="trailing" secondItem="PvK-UJ-8YV" secondAttribute="trailing" constant="5" id="mfU-cK-yl2"/>
                             <constraint firstItem="n8o-km-xAg" firstAttribute="trailing" secondItem="YtM-kx-hz3" secondAttribute="trailing" constant="5" id="oYO-GQ-DHH"/>
                             <constraint firstItem="kBs-37-rSO" firstAttribute="leading" secondItem="ihy-bG-eIj" secondAttribute="trailing" constant="5" id="ocb-h9-iKc"/>
                             <constraint firstItem="n8o-km-xAg" firstAttribute="trailing" secondItem="3Cg-0O-s7x" secondAttribute="trailing" constant="5" id="pkq-Va-WIq"/>
+                            <constraint firstItem="dhf-hs-fcp" firstAttribute="leading" secondItem="n8o-km-xAg" secondAttribute="leading" constant="10" id="q6k-Hj-sfd"/>
+                            <constraint firstAttribute="bottom" secondItem="uee-Pb-aa6" secondAttribute="bottom" constant="10" id="qUy-Xs-asz"/>
                             <constraint firstItem="n8o-km-xAg" firstAttribute="trailing" secondItem="Pdy-Fw-Es7" secondAttribute="trailing" constant="5" id="so0-4h-qj9"/>
-                            <constraint firstItem="n8o-km-xAg" firstAttribute="trailing" secondItem="dhf-hs-fcp" secondAttribute="trailing" constant="10" id="u0p-aX-4LV"/>
                             <constraint firstItem="Pdy-Fw-Es7" firstAttribute="leading" secondItem="ihy-bG-eIj" secondAttribute="trailing" constant="5" id="uXt-hX-uyJ"/>
-                            <constraint firstItem="uee-Pb-aa6" firstAttribute="top" secondItem="dhf-hs-fcp" secondAttribute="bottom" constant="10" id="vgR-C7-Gru"/>
+                            <constraint firstItem="lN8-He-DPx" firstAttribute="leading" secondItem="n8o-km-xAg" secondAttribute="leading" constant="10" id="uoE-dT-Gnz"/>
                             <constraint firstItem="ihy-bG-eIj" firstAttribute="top" secondItem="n8o-km-xAg" secondAttribute="top" constant="5" id="ye0-pn-Mqf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n8o-km-xAg"/>
@@ -362,7 +372,8 @@
                         <outlet property="strMealThumbImageView" destination="ihy-bG-eIj" id="LIs-Un-EQ9"/>
                         <outlet property="strSourceLabel" destination="YtM-kx-hz3" id="lHo-tf-RfH"/>
                         <outlet property="strTagsLabel" destination="3Cg-0O-s7x" id="oxy-J6-L5v"/>
-                        <outlet property="strYoutubeLabel" destination="Dgg-k8-Btu" id="T8K-VO-VDJ"/>
+                        <outlet property="strYoutubeButton" destination="lN8-He-DPx" id="arX-J6-RUK"/>
+                        <outlet property="strYoutubeLabel" destination="vd0-xW-1Bg" id="bH8-Ry-267"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3jm-qT-D7A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

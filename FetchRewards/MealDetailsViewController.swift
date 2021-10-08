@@ -21,9 +21,33 @@ class MealDetailsViewController: UIViewController {
     @IBOutlet weak var dateModifiedLabel: UILabel!
     @IBOutlet weak var strCreativeCommonsConfirmedLabel: UILabel!
     
+
+
     @IBOutlet weak var strImageSourceLabel: UILabel!
     @IBOutlet weak var strSourceLabel: UILabel!
+
+
+
     @IBOutlet weak var strYoutubeLabel: UILabel!
+    @IBOutlet weak var strYoutubeButton: UIButton!
+    @IBAction func strYoutubeButton(_ sender: UIButton) {
+        UIApplication.shared.open(URL(string: strYoutube!)! as URL, options: [:], completionHandler: nil)
+    }
+
+
+    /*
+     UIButton.alpha = 0 or 1 to hide or show
+     
+     if let isThereData = strImageSource {
+        UIButton.alpha = 1
+     } else {
+        UIButton.alpha = 0
+     }
+     
+     */
+
+
+
     @IBOutlet weak var strInstructionsTextView: UITextView!
     @IBOutlet weak var strIngredientsstrMeasureTextView: UITextView!
     
@@ -64,14 +88,15 @@ class MealDetailsViewController: UIViewController {
                 
                 for item in downloadedMealDetails.meals {
                     
-            
+                    
                     if let imageURL = URL(string: item.strMealThumb ?? "No Image Available") {
                         DispatchQueue.global().async {
                             guard let data = try? Data(contentsOf: imageURL) else { return }
                             let image = UIImage(data: data)
-                                DispatchQueue.main.sync {
-                                    self.strMealThumbImageView.image = image
-                                }
+                            
+                            DispatchQueue.main.sync {
+                                self.strMealThumbImageView.image = image
+                            }
                         }
                     }
 
@@ -84,14 +109,17 @@ class MealDetailsViewController: UIViewController {
                     //self.dateModifiedLabel.text =
                     self.strCreativeCommonsConfirmed = item.strCreativeCommonsConfirmed
                     self.strImageSource = item.strImageSource
+                    
+                    
                     self.strSource = item.strSource
                     self.strYoutube = item.strYoutube
+                    
+                    
                     self.strInstructions = item.strInstructions
                     //self.strIngredientsstrMeasure = item.strIngredient1
 
 
                     DispatchQueue.main.async {
-                        //                    print("idMeal: \(String(describing: self.idMeal))")
                         self.idMealLabel.text = self.idMeal
                         self.strMealLabel.text = self.strMeal
                         self.strDrinkAlternateLabel.text = self.strDrinkAlternate
@@ -101,8 +129,19 @@ class MealDetailsViewController: UIViewController {
                         //self.dateModifiedLabel.text =
                         self.strCreativeCommonsConfirmedLabel.text = self.strCreativeCommonsConfirmed
                         self.strImageSourceLabel.text = self.strImageSource
+                        
+                        
                         self.strSourceLabel.text = self.strSource
+                        
                         self.strYoutubeLabel.text = self.strYoutube
+                        
+                        self.strYoutubeButton.setTitle(self.strYoutube, for: .normal)
+                        print("strYoutube: \(String(describing: self.strYoutube))")
+                        
+                        func strYoutubeButton(_ sender: UIButton) {
+                            UIApplication.shared.open(URL(string: self.strYoutube!)! as URL, options: [:], completionHandler: nil)
+                        }
+                        
                         self.strInstructionsTextView.text = self.strInstructions
                         //self.strIngredientsstrMeasureTextView.text = self.strIngredient1
                         
@@ -124,29 +163,22 @@ class MealDetailsViewController: UIViewController {
             }.resume()
     }
 
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.title = "Meal Details"
         
         downloadJson()
- 
-//        for item in localMealDetails {
-//            idMealLabel.text = item.idMeal
-//            strMealLabel.text = item.strMeal
-//            strDrinkAlternateLabel.text = item.strDrinkAlternate
-//            strCategoryLabel.text = item.strCategory
-//            strAreaLabel.text = item.strArea
-//            strTagsLabel.text = item.strTags
-//            //dateModifiedLabel.text =
-//            strCreativeCommonsConfirmedLabel.text = item.strCreativeCommonsConfirmed
-//            strImageSourceLabel.text = item.strImageSourece
-//            strSourceLabel.text = item.strSource
-//            strYoutubeLabel.text = item.strYoutube
-//            strInstructionsTextView.text = item.strInstructions
-//            strIngredientsstrMeasureTextView.text = item.strIngredient1
+        
+        
+        
+//        if strYoutube == nil {
+//            strYoutubeButton.alpha = 0
+//        } else {
+//            strYoutubeButton.alpha = 1
 //        }
+
         
     }
     
