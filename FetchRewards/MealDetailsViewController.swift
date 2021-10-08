@@ -24,8 +24,24 @@ class MealDetailsViewController: UIViewController {
     @IBOutlet weak var strImageSourceLabel: UILabel!
     @IBOutlet weak var strSourceLabel: UILabel!
     @IBOutlet weak var strYoutubeLabel: UILabel!
-    @IBOutlet weak var striInstructionsTextView: UITextView!
+    @IBOutlet weak var strInstructionsTextView: UITextView!
     @IBOutlet weak var strIngredientsstrMeasureTextView: UITextView!
+    
+    
+    var idMeal: String?
+    var strMeal: String?
+    var strDrinkAlternate: String?
+    var strCategory: String?
+//    strArea
+//    strTags
+//    //dateModifiedLabel.text =
+//    strCreativeCommonsConfirmed
+//    strImageSourece
+//    strSource
+//    strYoutube
+//    strInstructions
+//    strIngredient1
+    
     
     
     var url: URL!
@@ -47,13 +63,24 @@ class MealDetailsViewController: UIViewController {
 
                 
                 for item in downloadedMealDetails.meals {
-                    print("\(String(describing: item.idMeal))")
-                    print("\(String(describing: item.strMeal))")
+                    
+                    self.idMeal = item.idMeal
+                    self.strMeal = item.strMeal
+                    self.strDrinkAlternate = item.strDrinkAlternate
+                    self.strCategory = item.strCategory
+//                    print("\(String(describing: item.idMeal))")
+//                    print("\(String(describing: item.strMeal))")
+//                    print("\(String(describing: item.strArea))")
+//                    print("\(String(describing: item.strIngredient1))")
+                    
                 }
-//                self.localMealDetails = downloadedMealDetails.meals
-//
-//                print(self.localMealDetails)
-//
+                
+                
+                self.localMealDetails = downloadedMealDetails.meals
+                
+                DispatchQueue.main.sync {
+                    self.viewDidLoad()
+                }
 
                 
                                 
@@ -71,9 +98,31 @@ class MealDetailsViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.title = "Meal Details"
 
-        downloadJson()
+         downloadJson()
         
-        //idMealLabel.text = downloadedMealDetails.
+           
+            print("idMeal: \(String(describing: idMeal))")
+            idMealLabel.text = idMeal
+            strMealLabel.text = strMeal
+            strDrinkAlternateLabel.text = strDrinkAlternate
+            strCategoryLabel.text = strCategory
+  
+//        for item in localMealDetails {
+//            idMealLabel.text = item.idMeal
+//            strMealLabel.text = item.strMeal
+//            strDrinkAlternateLabel.text = item.strDrinkAlternate
+//            strCategoryLabel.text = item.strCategory
+//            strAreaLabel.text = item.strArea
+//            strTagsLabel.text = item.strTags
+//            //dateModifiedLabel.text =
+//            strCreativeCommonsConfirmedLabel.text = item.strCreativeCommonsConfirmed
+//            strImageSourceLabel.text = item.strImageSourece
+//            strSourceLabel.text = item.strSource
+//            strYoutubeLabel.text = item.strYoutube
+//            strInstructionsTextView.text = item.strInstructions
+//            strIngredientsstrMeasureTextView.text = item.strIngredient1
+//        }
+        
     }
     
     

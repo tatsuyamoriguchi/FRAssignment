@@ -282,7 +282,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="striInstructionsTextView" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dhf-hs-fcp" userLabel="strInstructionsTextView">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="strInstructionsTextView" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dhf-hs-fcp" userLabel="strInstructionsTextView">
                                 <rect key="frame" x="10" y="386" width="394" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -357,12 +357,12 @@
                         <outlet property="strDrinkAlternateLabel" destination="URf-8y-icN" id="KQ2-i3-w6M"/>
                         <outlet property="strImageSourceLabel" destination="PvK-UJ-8YV" id="LNf-Wi-IL6"/>
                         <outlet property="strIngredientsstrMeasureTextView" destination="uee-Pb-aa6" id="ycR-zU-dMH"/>
+                        <outlet property="strInstructionsTextView" destination="dhf-hs-fcp" id="GXX-mZ-dQN"/>
                         <outlet property="strMealLabel" destination="Tec-Op-kxl" id="62W-sn-1r1"/>
                         <outlet property="strMealThumbImageView" destination="ihy-bG-eIj" id="LIs-Un-EQ9"/>
                         <outlet property="strSourceLabel" destination="YtM-kx-hz3" id="lHo-tf-RfH"/>
                         <outlet property="strTagsLabel" destination="3Cg-0O-s7x" id="oxy-J6-L5v"/>
                         <outlet property="strYoutubeLabel" destination="Dgg-k8-Btu" id="T8K-VO-VDJ"/>
-                        <outlet property="striInstructionsTextView" destination="dhf-hs-fcp" id="1mV-H8-85M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3jm-qT-D7A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

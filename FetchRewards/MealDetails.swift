@@ -22,6 +22,7 @@ class MealDetails: Codable {
     let strMeal: String?
     let strCategory: String?
     let strArea: String?
+    let strDrinkAlternate: String?
     let strInstructions: String?
     let strMealThumb: String?
     let strTags: String?
@@ -77,6 +78,7 @@ class MealDetails: Codable {
     strMeal: String,
     strCategory: String,
     strArea: String,
+    strDrinkAlternate: String,
     strInstructions: String,
     strMealThumb: String,
     strTags: String,
@@ -130,6 +132,7 @@ class MealDetails: Codable {
         self.strMeal = strMeal
         self.strCategory = strCategory
         self.strArea = strArea
+        self.strDrinkAlternate = strDrinkAlternate
         self.strInstructions = strInstructions
         self.strMealThumb = strMealThumb
         self.strTags = strTags
