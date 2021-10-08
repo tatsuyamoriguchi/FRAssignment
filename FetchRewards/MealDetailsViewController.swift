@@ -26,25 +26,14 @@ class MealDetailsViewController: UIViewController {
     @IBOutlet weak var strImageSourceLabel: UILabel!
     @IBOutlet weak var strSourceLabel: UILabel!
 
-
-
     @IBOutlet weak var strYoutubeLabel: UILabel!
     @IBOutlet weak var strYoutubeButton: UIButton!
-    @IBAction func strYoutubeButton(_ sender: UIButton) {
-        UIApplication.shared.open(URL(string: strYoutube!)! as URL, options: [:], completionHandler: nil)
+
+    @IBAction func strYoutubeButton(_ sender: Any) {
+    UIApplication.shared.open(URL(string: self.strYoutube!)! as URL, options: [:], completionHandler: nil)
+        
     }
 
-
-    /*
-     UIButton.alpha = 0 or 1 to hide or show
-     
-     if let isThereData = strImageSource {
-        UIButton.alpha = 1
-     } else {
-        UIButton.alpha = 0
-     }
-     
-     */
 
 
 
@@ -135,12 +124,23 @@ class MealDetailsViewController: UIViewController {
                         
                         self.strYoutubeLabel.text = self.strYoutube
                         
-                        self.strYoutubeButton.setTitle(self.strYoutube, for: .normal)
+                        
+                        
+                    
                         print("strYoutube: \(String(describing: self.strYoutube))")
                         
-                        func strYoutubeButton(_ sender: UIButton) {
-                            UIApplication.shared.open(URL(string: self.strYoutube!)! as URL, options: [:], completionHandler: nil)
+                        if self.strYoutube == "" || self.strYoutube == nil {
+                            self.strYoutubeButton.alpha = 0
+                            self.strYoutubeButton.setTitle("No link", for: .normal)
+                            print("say no link")
+                        } else {
+                            print("say there is a link")
+                            self.strYoutubeButton.setTitle("Open YouTube Video", for: .normal)
+                            self.strYoutubeButton.alpha = 1
+
                         }
+                        
+                        
                         
                         self.strInstructionsTextView.text = self.strInstructions
                         //self.strIngredientsstrMeasureTextView.text = self.strIngredient1
@@ -173,11 +173,7 @@ class MealDetailsViewController: UIViewController {
         
         
         
-//        if strYoutube == nil {
-//            strYoutubeButton.alpha = 0
-//        } else {
-//            strYoutubeButton.alpha = 1
-//        }
+
 
         
     }

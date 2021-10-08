@@ -299,12 +299,12 @@
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lN8-He-DPx">
                                 <rect key="frame" x="10" y="381" width="394" height="21"/>
+                                <color key="backgroundColor" red="0.6705882353" green="0.98823529409999999" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="bov-YZ-Gsu"/>
                                 </constraints>
-                                <state key="normal" title="YouTube Link"/>
                                 <connections>
-                                    <action selector="strYoutubeButton:" destination="nhe-lC-vdu" eventType="touchUpInside" id="Jt8-g5-RHc"/>
+                                    <action selector="strYoutubeButton:" destination="nhe-lC-vdu" eventType="touchUpInside" id="ZQy-VJ-Vls"/>
                                 </connections>
                             </button>
                         </subviews>
