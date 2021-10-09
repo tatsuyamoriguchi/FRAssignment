@@ -49,14 +49,18 @@ class MealDetailsViewController: UIViewController {
     var strCategory: String?
     var strArea: String?
     var strTags: String?
-    //dateModifiedLabel.text =
+    var dateModified: String?
     var strCreativeCommonsConfirmed: String?
+
+    // External links
     var strImageSource: String?
     var strSource: String?
     var strYoutube: String?
-    
+
+    // Instructions
     var strInstructions: String?
-    
+
+    // Ingredients
     var strIngredient1: String?
     var strIngredient2: String?
     var strIngredient3: String?
@@ -78,6 +82,7 @@ class MealDetailsViewController: UIViewController {
     var strIngredient19: String?
     var strIngredient20: String?
     
+    // Measure
     var strMeasure1: String?
     var strMeasure2: String?
     var strMeasure3: String?
@@ -102,9 +107,7 @@ class MealDetailsViewController: UIViewController {
 
     // url to get  JSON data
     var url: URL!
-    // Local array to store JSON data
-    var localMealDetails = [MealDetails]()
-    
+ 
     func downloadJson() {
         guard let downloadUrl = url else { return }
         URLSession.shared.dataTask(with: downloadUrl) { (data, urlResponse, error) in
@@ -139,7 +142,8 @@ class MealDetailsViewController: UIViewController {
                     self.strArea = item.strArea
                     self.strTags = item.strTags
  
-                    //self.dateModifiedLabel.text =
+                    self.dateModified = item.dateModified
+                    print("self.dateModified: \(String(describing: self.dateModified))")
                     
                     self.strCreativeCommonsConfirmed = item.strCreativeCommonsConfirmed
                     self.strImageSource = item.strImageSource
@@ -196,62 +200,61 @@ class MealDetailsViewController: UIViewController {
                         self.strCategoryLabel.text = self.strCategory
                         self.strAreaLabel.text = self.strArea
                         self.strTagsLabel.text = self.strTags
-                        //self.dateModifiedLabel.text =
+                        self.dateModifiedLabel.text = self.dateModified
                         self.strCreativeCommonsConfirmedLabel.text = self.strCreativeCommonsConfirmed
 
+                        // Hide strImageSourceButton if "" or nil
                         if self.strImageSource == "" || self.strImageSource ==  nil {
                             self.strImageSourceButton.alpha = 0
                         } else {
-                            self.strImageSourceButton.setTitle("Open Source Link", for: .normal)
+                            self.strImageSourceButton.setTitle("Image", for: .normal)
                             self.strImageSourceButton.alpha = 1
                         }
 
-                        
+                        // Hide strSourceButton if "" or nil
                         if self.strSource == "" || self.strSource ==  nil {
                             self.strSourceButton.alpha = 0
                         } else {
-                            self.strSourceButton.setTitle("Open Source Link", for: .normal)
+                            self.strSourceButton.setTitle("Source", for: .normal)
                             self.strSourceButton.alpha = 1
                         }
 
-
+                        // Hide strYoutubeButton if "" or nil
                         if self.strYoutube == "" || self.strYoutube == nil {
                             self.strYoutubeButton.alpha = 0
                             self.strYoutubeButton.setTitle("No link", for: .normal)
                         } else {
-                            self.strYoutubeButton.setTitle("Open YouTube Video", for: .normal)
+                            self.strYoutubeButton.setTitle("YouTube", for: .normal)
                             self.strYoutubeButton.alpha = 1
                         }
                         
                         
                         self.strInstructionsTextView.text = self.strInstructions
                         
-
+                        // Array to store all ingredient data in order
                         let arrayIngredients = [
                             self.strIngredient1, self.strIngredient2, self.strIngredient3, self.strIngredient4, self.strIngredient5, self.strIngredient6, self.strIngredient7, self.strIngredient8, self.strIngredient9, self.strIngredient10, self.strIngredient11, self.strIngredient12, self.strIngredient13, self.strIngredient14, self.strIngredient15, self.strIngredient16, self.strIngredient17, self.strIngredient18, self.strIngredient19, self.strIngredient20
                         ]
                         
+                        // Array to store all measure data in order
                         let arrayMeasure = [
                             self.strMeasure1, self.strMeasure2, self.strMeasure3, self.strMeasure4, self.strMeasure5, self.strMeasure6, self.strMeasure7, self.strMeasure8, self.strMeasure9, self.strMeasure10, self.strMeasure11, self.strMeasure12, self.strMeasure13, self.strMeasure14, self.strMeasure15, self.strMeasure16, self.strMeasure17, self.strMeasure18, self.strMeasure19, self.strMeasure20
                         ]
-                        
-                       self.strIngredientsstrMeasureTextView.insertText("\n")
+                       
+                        self.strIngredientsstrMeasureTextView.insertText("\n")
+                        // Iterate arrays to insert data to strIngredientsstrMeasureTextView
                         for i in 0...19 {
                            
                             if arrayIngredients[i] ==  "" || arrayIngredients[i] == nil {} else {
-                                print(arrayIngredients[i] as Any)
-                                self.strIngredientsstrMeasureTextView.insertText(arrayIngredients[i] ?? "")
 
-                            self.strIngredientsstrMeasureTextView.insertText(" : ")
-                            self.strIngredientsstrMeasureTextView.insertText(arrayMeasure[i] ?? "")
-                            self.strIngredientsstrMeasureTextView.insertText("\n")
+                                self.strIngredientsstrMeasureTextView.insertText(arrayIngredients[i] ?? "")
+                                self.strIngredientsstrMeasureTextView.insertText(" : ")
+                                self.strIngredientsstrMeasureTextView.insertText(arrayMeasure[i] ?? "")
+                                self.strIngredientsstrMeasureTextView.insertText("\n")
                             }
                         }
                     }
                 }
-                
-                
-                self.localMealDetails = downloadedMealDetails.meals
                 
             } catch {
                 print("Something went wrong after downloading.")

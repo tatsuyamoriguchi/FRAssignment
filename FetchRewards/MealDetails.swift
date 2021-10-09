@@ -70,7 +70,7 @@ class MealDetails: Codable {
     let strSource: String?
     let strImageSource: String?
     let strCreativeCommonsConfirmed: String?
-    let dateModified: Date?
+    let dateModified: String?
     
     
     init(
@@ -126,7 +126,7 @@ class MealDetails: Codable {
      strSource: String,
      strImageSource: String,
      strCreativeCommonsConfirmed: String,
-     dateModified: Date)  {
+     dateModified: String)  {
         
         self.idMeal = idMeal
         self.strMeal = strMeal
