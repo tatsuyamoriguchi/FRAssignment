@@ -161,6 +161,7 @@ class MealDetailsViewController: UIViewController {
                     //self.strIngredientsstrMeasure = item.strIngredient1
 
 
+                 
                     self.strIngredient1 = item.strIngredient1
                     self.strIngredient2 = item.strIngredient2
                     self.strIngredient3 = item.strIngredient3
@@ -250,17 +251,30 @@ class MealDetailsViewController: UIViewController {
                         self.strInstructionsTextView.text = self.strInstructions
                         
                         
-                        // Combine strIngredientN and strMeasureN with " : " and "\n" then append it to ingredientsContents variable.
-                          
-                        self.strIngredientsstrMeasureTextView.text =
-                        \(self.strIngredient1) + " : " + \(self.strMeasure1) + "\n"
-                            \(self.strIngredient2) + " : " + \(self.strMeasure2) + "\n"
-                            \(self.strIngredient3) + " : " + \(self.strMeasure3) + "\n"
-                            \(self.strIngredient4) + " : " + \(self.strMeasure4) + "\n"
-                            \(self.strIngredient5) + " : " + \(self.strMeasure5) + "\n"
-
-
+                        //var concatenatedString: String?
+                        //self.strIngredientsstrMeasureTextView.text = concatenatedString
                         
+
+                        let arrayIngredients = [
+                            self.strIngredient1, self.strIngredient2, self.strIngredient3, self.strIngredient4, self.strIngredient5, self.strIngredient6, self.strIngredient7, self.strIngredient8, self.strIngredient9, self.strIngredient10, self.strIngredient11, self.strIngredient12, self.strIngredient13, self.strIngredient14, self.strIngredient15, self.strIngredient16, self.strIngredient17, self.strIngredient18, self.strIngredient19, self.strIngredient20
+                        ]
+                        
+                        let arrayMeasure = [
+                            self.strMeasure1, self.strMeasure2, self.strMeasure3, self.strMeasure4, self.strMeasure5, self.strMeasure6, self.strMeasure7, self.strMeasure8, self.strMeasure9, self.strMeasure10, self.strMeasure11, self.strMeasure12, self.strMeasure13, self.strMeasure14, self.strMeasure15, self.strMeasure16, self.strMeasure17, self.strMeasure18, self.strMeasure19, self.strMeasure20
+                        ]
+                        
+                       self.strIngredientsstrMeasureTextView.insertText("\n")
+                        for i in 0...19 {
+                           
+                            if arrayIngredients[i] !=  "" {
+                                print(arrayIngredients[i] as Any)
+                                self.strIngredientsstrMeasureTextView.insertText(arrayIngredients[i] ?? "")
+
+                            self.strIngredientsstrMeasureTextView.insertText(" : ")
+                            self.strIngredientsstrMeasureTextView.insertText(arrayMeasure[i] ?? "")
+                            self.strIngredientsstrMeasureTextView.insertText("\n")
+                            }
+                        }
                     }
                 }
                 
@@ -280,6 +294,9 @@ class MealDetailsViewController: UIViewController {
     }
 
 
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

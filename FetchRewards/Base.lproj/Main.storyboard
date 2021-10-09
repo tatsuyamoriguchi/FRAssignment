@@ -255,7 +255,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="strInstructionsTextView" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dhf-hs-fcp" userLabel="strInstructionsTextView">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dhf-hs-fcp" userLabel="strInstructionsTextView">
                                 <rect key="frame" x="10" y="348" width="394" height="328"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -265,7 +265,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="strIngredients:strMeasureTextView" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uee-Pb-aa6" userLabel="strIngredients:strMeasureTextView">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ingredients: " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uee-Pb-aa6" userLabel="strIngredients:strMeasureTextView">
                                 <rect key="frame" x="10" y="686" width="394" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
