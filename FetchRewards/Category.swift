@@ -19,10 +19,10 @@ class Categories: Codable {
 
 class Category: Codable {
     
-    let idCategory: String
-    let strCategory: String
-    let strCategoryThumb: String
-    let strCategoryDescription: String
+    let idCategory: String?
+    let strCategory: String?
+    let strCategoryThumb: String?
+    let strCategoryDescription: String?
 
     init(idCategory: String, strCategory: String, strCategoryThumb: String, strCategoryDescription: String) {
         self.idCategory = idCategory

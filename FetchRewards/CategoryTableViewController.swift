@@ -28,7 +28,9 @@ class CategoryTableViewController: UITableViewController {
                 let decoder = JSONDecoder()
                 let downloadedCategories = try decoder.decode(Categories.self, from: data)
                 
-                self.localCategories = downloadedCategories.categories
+                //self.localCategories = downloadedCategories.categories
+                self.localCategories = downloadedCategories.categories.sorted { $0.strCategory ?? "" < $1.strCategory ?? ""}
+                
                 
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
@@ -75,7 +77,7 @@ class CategoryTableViewController: UITableViewController {
         cell.strCategoryLabel.text = localCategories[indexPath.row].strCategory
         cell.strCategoryDescriptionTextView.text = localCategories[indexPath.row].strCategoryDescription
  
-        if let imageURL = URL(string: localCategories[indexPath.row].strCategoryThumb) {
+        if let imageURL = URL(string: localCategories[indexPath.row].strCategoryThumb ?? "") {
             DispatchQueue.global().async {
                 guard let data = try? Data(contentsOf: imageURL) else { return }
                 let image = UIImage(data: data)
@@ -93,9 +95,11 @@ class CategoryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let strCategoryForURL = localCategories[indexPath.row].strCategory
+        // Just in case strCategory is ""
+        if let strCategoryForURL = localCategories[indexPath.row].strCategory {
         urlToPass = URL(string: "https://www.themealdb.com/api/json/v1/1/filter.php?c=" + strCategoryForURL)
         performSegue(withIdentifier: "toMeals", sender: nil)
+        }
     }
 
 

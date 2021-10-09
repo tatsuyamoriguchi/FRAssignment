@@ -212,7 +212,7 @@ class MealDetailsViewController: UIViewController {
                         }
 
                         // Hide strSourceButton if "" or nil
-                        if self.strSource == "" || self.strSource ==  nil {
+                        if self.strSource == "" || self.strSource == nil {
                             self.strSourceButton.alpha = 0
                         } else {
                             self.strSourceButton.setTitle("Source", for: .normal)

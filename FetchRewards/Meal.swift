@@ -19,7 +19,7 @@ class Meals: Codable {
 }
 
 class Meal: Codable {
-    let strMeal: String?
+    var strMeal: String?
     let strMealThumb: String?
     let idMeal: String?
     

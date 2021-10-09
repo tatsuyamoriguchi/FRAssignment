@@ -31,7 +31,7 @@ class MealsTableViewController: UITableViewController {
                 let decoder = JSONDecoder()
                 let downloadedMeals = try decoder.decode(Meals.self, from: data)
                 
-                self.localMeals = downloadedMeals.meals
+                self.localMeals = downloadedMeals.meals.sorted { $0.strMeal ?? "" < $1.strMeal ?? "" } // strMeal? in Meal class (See Meal.swift) causes an error here: 'Binary operator '<' cannot be applied to two 'String?' operands'
                 
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
