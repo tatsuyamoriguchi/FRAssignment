@@ -23,7 +23,12 @@ class MealDetailsViewController: UIViewController {
     
 
 
-    @IBOutlet weak var strImageSourceLabel: UILabel!
+    @IBOutlet weak var strImageSourceButton: UIButton!
+    @IBAction func strImageSourceButton(_ sender: Any) {
+        UIApplication.shared.open(URL(string: self.strImageSource!)! as URL, options: [:], completionHandler: nil)
+    
+    }
+
     
     
     @IBOutlet weak var strSourceButton: UIButton!
@@ -124,8 +129,15 @@ class MealDetailsViewController: UIViewController {
                         self.strTagsLabel.text = self.strTags
                         //self.dateModifiedLabel.text =
                         self.strCreativeCommonsConfirmedLabel.text = self.strCreativeCommonsConfirmed
-                        self.strImageSourceLabel.text = self.strImageSource
-                        
+
+
+                        if self.strImageSource == "" || self.strImageSource ==  nil {
+                            self.strImageSourceButton.alpha = 0
+                        } else {
+                            self.strImageSourceButton.setTitle("Open Source Link", for: .normal)
+                            self.strImageSourceButton.alpha = 1
+                        }
+
                         
                         if self.strSource == "" || self.strSource ==  nil {
                             self.strSourceButton.alpha = 0
