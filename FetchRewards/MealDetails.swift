@@ -136,8 +136,8 @@ class MealDetails: Codable {
         self.strInstructions = strInstructions
         self.strMealThumb = strMealThumb
         self.strTags = strTags
-         self.strYoutube = strYoutube
-         self.strIngredient1 = strIngredient1
+        self.strYoutube = strYoutube
+        self.strIngredient1 = strIngredient1
          self.strIngredient2 = strIngredient2
          self.strIngredient3 = strIngredient3
          self.strIngredient4 = strIngredient4
@@ -177,10 +177,10 @@ class MealDetails: Codable {
          self.strMeasure18 = strMeasure18
          self.strMeasure19 = strMeasure19
          self.strMeasure20 = strMeasure20
-         self.strSource = strSource
+        self.strSource = strSource
          self.strImageSource = strImageSource
          self.strCreativeCommonsConfirmed = strCreativeCommonsConfirmed
-         self.dateModified = dateModified
+        self.dateModified = dateModified
      }
 }
 

@@ -64,9 +64,50 @@ class MealDetailsViewController: UIViewController {
     var strImageSource: String?
     var strSource: String?
     var strYoutube: String?
-    var strInstructions: String?
-    var strIngredient1: String?
     
+    var strInstructions: String?
+    
+    var strIngredient1: String?
+    var strIngredient2: String?
+    var strIngredient3: String?
+    var strIngredient4: String?
+    var strIngredient5: String?
+    var strIngredient6: String?
+    var strIngredient7: String?
+    var strIngredient8: String?
+    var strIngredient9: String?
+    var strIngredient10: String?
+    var strIngredient11: String?
+    var strIngredient12: String?
+    var strIngredient13: String?
+    var strIngredient14: String?
+    var strIngredient15: String?
+    var strIngredient16: String?
+    var strIngredient17: String?
+    var strIngredient18: String?
+    var strIngredient19: String?
+    var strIngredient20: String?
+    
+    var strMeasure1: String?
+    var strMeasure2: String?
+    var strMeasure3: String?
+    var strMeasure4: String?
+    var strMeasure5: String?
+    var strMeasure6: String?
+    var strMeasure7: String?
+    var strMeasure8: String?
+    var strMeasure9: String?
+    var strMeasure10: String?
+    var strMeasure11: String?
+    var strMeasure12: String?
+    var strMeasure13: String?
+    var strMeasure14: String?
+    var strMeasure15: String?
+    var strMeasure16: String?
+    var strMeasure17: String?
+    var strMeasure18: String?
+    var strMeasure19: String?
+    var strMeasure20: String?
     
     
     var url: URL!
@@ -120,6 +161,50 @@ class MealDetailsViewController: UIViewController {
                     //self.strIngredientsstrMeasure = item.strIngredient1
 
 
+                    self.strIngredient1 = item.strIngredient1
+                    self.strIngredient2 = item.strIngredient2
+                    self.strIngredient3 = item.strIngredient3
+                    self.strIngredient4 = item.strIngredient4
+                    self.strIngredient5 = item.strIngredient5
+                    self.strIngredient6 = item.strIngredient6
+                    self.strIngredient7 = item.strIngredient7
+                    self.strIngredient8 = item.strIngredient8
+                    self.strIngredient9 = item.strIngredient9
+                    self.strIngredient10 = item.strIngredient10
+                    self.strIngredient11 = item.strIngredient11
+                    self.strIngredient12 = item.strIngredient12
+                    self.strIngredient13 = item.strIngredient13
+                    self.strIngredient14 = item.strIngredient14
+                    self.strIngredient15 = item.strIngredient15
+                    self.strIngredient16 = item.strIngredient16
+                    self.strIngredient17 = item.strIngredient17
+                    self.strIngredient18 = item.strIngredient18
+                    self.strIngredient19 = item.strIngredient19
+                    self.strIngredient20 = item.strIngredient20
+                    
+                    self.strMeasure1 = item.strMeasure1
+                    self.strMeasure2 = item.strMeasure2
+                    self.strMeasure3 = item.strMeasure3
+                    self.strMeasure4 = item.strMeasure4
+                    self.strMeasure5 = item.strMeasure5
+                    self.strMeasure6 = item.strMeasure6
+                    self.strMeasure7 = item.strMeasure7
+                    self.strMeasure8 = item.strMeasure8
+                    self.strMeasure9 = item.strMeasure9
+                    self.strMeasure10 = item.strMeasure10
+                    self.strMeasure11 = item.strMeasure11
+                    self.strMeasure12 = item.strMeasure12
+                    self.strMeasure13 = item.strMeasure13
+                    self.strMeasure14 = item.strMeasure14
+                    self.strMeasure15 = item.strMeasure15
+                    self.strMeasure16 = item.strMeasure16
+                    self.strMeasure17 = item.strMeasure17
+                    self.strMeasure18 = item.strMeasure18
+                    self.strMeasure19 = item.strMeasure19
+                    self.strMeasure20 = item.strMeasure20
+
+                    
+                    
                     DispatchQueue.main.async {
                         self.idMealLabel.text = self.idMeal
                         self.strMealLabel.text = self.strMeal
@@ -163,7 +248,18 @@ class MealDetailsViewController: UIViewController {
                         
                         
                         self.strInstructionsTextView.text = self.strInstructions
-                        //self.strIngredientsstrMeasureTextView.text = self.strIngredient1
+                        
+                        
+                        // Combine strIngredientN and strMeasureN with " : " and "\n" then append it to ingredientsContents variable.
+                          
+                        self.strIngredientsstrMeasureTextView.text =
+                        \(self.strIngredient1) + " : " + \(self.strMeasure1) + "\n"
+                            \(self.strIngredient2) + " : " + \(self.strMeasure2) + "\n"
+                            \(self.strIngredient3) + " : " + \(self.strMeasure3) + "\n"
+                            \(self.strIngredient4) + " : " + \(self.strMeasure4) + "\n"
+                            \(self.strIngredient5) + " : " + \(self.strMeasure5) + "\n"
+
+
                         
                     }
                 }
