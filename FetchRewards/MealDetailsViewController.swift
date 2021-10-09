@@ -20,38 +20,28 @@ class MealDetailsViewController: UIViewController {
     @IBOutlet weak var strTagsLabel: UILabel!
     @IBOutlet weak var dateModifiedLabel: UILabel!
     @IBOutlet weak var strCreativeCommonsConfirmedLabel: UILabel!
-    
-
-
+ 
     @IBOutlet weak var strImageSourceButton: UIButton!
     @IBAction func strImageSourceButton(_ sender: Any) {
         UIApplication.shared.open(URL(string: self.strImageSource!)! as URL, options: [:], completionHandler: nil)
-    
     }
 
-    
-    
     @IBOutlet weak var strSourceButton: UIButton!
     @IBAction func strSourceButton(_ sender: Any) {
           UIApplication.shared.open(URL(string: self.strSource!)! as URL, options: [:], completionHandler: nil)
-        
     }
-    
-    
     
     @IBOutlet weak var strYoutubeButton: UIButton!
         
     @IBAction func strYoutubeButton(_ sender: Any) {
     UIApplication.shared.open(URL(string: self.strYoutube!)! as URL, options: [:], completionHandler: nil)
-        
     }
-
-
 
 
     @IBOutlet weak var strInstructionsTextView: UITextView!
     @IBOutlet weak var strIngredientsstrMeasureTextView: UITextView!
     
+    // Properties to store JSON values
     var strMealThumb: String?
     var idMeal: String?
     var strMeal: String?
@@ -109,10 +99,10 @@ class MealDetailsViewController: UIViewController {
     var strMeasure19: String?
     var strMeasure20: String?
     
-    
+
+    // url to get  JSON data
     var url: URL!
-    //var idMeal: String!
-    
+    // Local array to store JSON data
     var localMealDetails = [MealDetails]()
     
     func downloadJson() {
@@ -130,7 +120,7 @@ class MealDetailsViewController: UIViewController {
                 
                 for item in downloadedMealDetails.meals {
                     
-                    
+                    // To convert string to URL type
                     if let imageURL = URL(string: item.strMealThumb ?? "No Image Available") {
                         DispatchQueue.global().async {
                             guard let data = try? Data(contentsOf: imageURL) else { return }
@@ -148,20 +138,14 @@ class MealDetailsViewController: UIViewController {
                     self.strCategory = item.strCategory
                     self.strArea = item.strArea
                     self.strTags = item.strTags
+ 
                     //self.dateModifiedLabel.text =
+                    
                     self.strCreativeCommonsConfirmed = item.strCreativeCommonsConfirmed
                     self.strImageSource = item.strImageSource
-                    
-                    
                     self.strSource = item.strSource
                     self.strYoutube = item.strYoutube
-                    
-                    
                     self.strInstructions = item.strInstructions
-                    //self.strIngredientsstrMeasure = item.strIngredient1
-
-
-                 
                     self.strIngredient1 = item.strIngredient1
                     self.strIngredient2 = item.strIngredient2
                     self.strIngredient3 = item.strIngredient3
@@ -203,7 +187,6 @@ class MealDetailsViewController: UIViewController {
                     self.strMeasure18 = item.strMeasure18
                     self.strMeasure19 = item.strMeasure19
                     self.strMeasure20 = item.strMeasure20
-
                     
                     
                     DispatchQueue.main.async {
@@ -215,7 +198,6 @@ class MealDetailsViewController: UIViewController {
                         self.strTagsLabel.text = self.strTags
                         //self.dateModifiedLabel.text =
                         self.strCreativeCommonsConfirmedLabel.text = self.strCreativeCommonsConfirmed
-
 
                         if self.strImageSource == "" || self.strImageSource ==  nil {
                             self.strImageSourceButton.alpha = 0
@@ -233,26 +215,16 @@ class MealDetailsViewController: UIViewController {
                         }
 
 
-
-//                        self.strYoutubeLabel.text = self.strYoutube
                         if self.strYoutube == "" || self.strYoutube == nil {
                             self.strYoutubeButton.alpha = 0
                             self.strYoutubeButton.setTitle("No link", for: .normal)
-                            
                         } else {
-                            
                             self.strYoutubeButton.setTitle("Open YouTube Video", for: .normal)
                             self.strYoutubeButton.alpha = 1
-
                         }
                         
                         
-                        
                         self.strInstructionsTextView.text = self.strInstructions
-                        
-                        
-                        //var concatenatedString: String?
-                        //self.strIngredientsstrMeasureTextView.text = concatenatedString
                         
 
                         let arrayIngredients = [
@@ -266,7 +238,7 @@ class MealDetailsViewController: UIViewController {
                        self.strIngredientsstrMeasureTextView.insertText("\n")
                         for i in 0...19 {
                            
-                            if arrayIngredients[i] !=  "" {
+                            if arrayIngredients[i] ==  "" || arrayIngredients[i] == nil {} else {
                                 print(arrayIngredients[i] as Any)
                                 self.strIngredientsstrMeasureTextView.insertText(arrayIngredients[i] ?? "")
 
@@ -281,22 +253,13 @@ class MealDetailsViewController: UIViewController {
                 
                 self.localMealDetails = downloadedMealDetails.meals
                 
-
-
-                
-                                
             } catch {
                 print("Something went wrong after downloading.")
             }
             
-            
             }.resume()
     }
 
-
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -304,15 +267,5 @@ class MealDetailsViewController: UIViewController {
         
         downloadJson()
         
-        
-        
-
-
-        
     }
-    
-    
-    
-    
-
 }
