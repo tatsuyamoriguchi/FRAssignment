@@ -92,6 +92,9 @@ class MealsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+ 
+        
+        
         if let idMealForURL = localMeals[indexPath.row].idMeal {
         urlToPassForMealDetails = URL(string: "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + idMealForURL)
         performSegue(withIdentifier: "toMealDetails", sender: nil)

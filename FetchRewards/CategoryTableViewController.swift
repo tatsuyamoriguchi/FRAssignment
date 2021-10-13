@@ -16,9 +16,9 @@ class CategoryTableViewController: UITableViewController {
     // Define a local array for TableView
     var localCategories = [Category]()
     
-    func downloadJson() {
-        guard let downloadUrl = url else { return }
-        URLSession.shared.dataTask(with: downloadUrl) { (data, urlResponse, error) in
+    func downloadJson(url: URL) {
+        //guard let downloadUrl = url else { return }
+        URLSession.shared.dataTask(with: url) { (data, urlResponse, error) in
             guard let data = data, error == nil, urlResponse != nil else {
                 print("Erro occred.")
                 return
@@ -48,7 +48,7 @@ class CategoryTableViewController: UITableViewController {
         
         super.viewDidLoad()
         navigationItem.title = "Category List"
-        downloadJson()
+        downloadJson(url: url!)
         
 
         // Uncomment the following line to preserve selection between presentations
